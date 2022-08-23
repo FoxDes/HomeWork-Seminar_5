@@ -45,35 +45,59 @@
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 // Найдите сумму элементов, стоящих на нечётных позициях.
 
-Console.Clear();
-Console.Write($"Введи количество элементов массива: ");
-int N = Convert.ToInt32(Console.ReadLine()); 
+// Console.Clear();
+// Console.Write($"Введи количество элементов массива: ");
+// int N = Convert.ToInt32(Console.ReadLine()); 
 
-int RandomArray(int N, int min, int max)
-  {
-  int[] randomArray = new int[N];
-  int sumArray = 0;
-  Console.Write("Массив: ");
+// int RandomArray(int N, int min, int max)
+//   {
+//   int[] randomArray = new int[N];
+//   int sumArray = 0;
+//   Console.Write("Массив: ");
 
-    for (int i = 0; i <randomArray.Length; i++ )
-    {
-      randomArray[i] = new Random().Next(min, max);
+//     for (int i = 0; i <randomArray.Length; i++ )
+//     {
+//       randomArray[i] = new Random().Next(min, max);
 
-      Console.Write(randomArray[i] + " ");
+//       Console.Write(randomArray[i] + " ");
 
-      if (i % 2 != 1)
-      {
-        sumArray = sumArray + randomArray[i];
-      }
-    }
-  return sumArray;
-  }
+//       if (i % 2 != 1)
+//       {
+//         sumArray = sumArray + randomArray[i];
+//       }
+//     }
+//   return sumArray;
+//   }
 
-int randomArray =  RandomArray(N, -100, 100);
+// int randomArray =  RandomArray(N, -100, 100);
 
-Console.WriteLine($"  -  " + "cумма элементов, стоящих на нечётных позициях: " + randomArray);
+// Console.WriteLine($"  -  " + "cумма элементов, стоящих на нечётных позициях: " + randomArray);
 
 
 // Задача 38: Задайте массив вещественных чисел. 
 // Найдите разницу между максимальным и минимальным элементов массива.
 
+Console.Clear();
+int[] arrayNumbers = new int[6];
+  for (int i = 0; i < arrayNumbers.Length; i++ )
+  {
+    arrayNumbers[i] = new Random().Next(-50, 100);
+    Console.Write(arrayNumbers[i] + " ");
+  }
+
+int maxNum = arrayNumbers[0];
+int minNum = arrayNumbers[0];
+
+  for (int i = 1; i < arrayNumbers.Length; i++)
+  {
+        if (maxNum < arrayNumbers[i])
+    {
+      maxNum = arrayNumbers[i];
+    }
+        if (minNum > arrayNumbers[i])
+    {
+      minNum = arrayNumbers[i];
+    }
+  }
+  int result = maxNum - minNum;
+  Console.WriteLine($"Разница между максимальным и минимальным элементами: {result}");
